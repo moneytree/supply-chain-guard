@@ -1,0 +1,7 @@
+{
+  "githubPackages": "*",
+  "githubRepositories": "*",
+  "npm": "*",
+  "pypi": "*",
+  "rubygems": "*"
+}

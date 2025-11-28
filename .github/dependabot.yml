@@ -1,0 +1,25 @@
+version: 2
+updates:
+  # system: npm
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: daily
+    exclude-paths:
+      - test
+
+  # system: pypi
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: daily
+    exclude-paths:
+      - test
+
+  # system: rubygems
+  - package-ecosystem: bundler
+    directory: /
+    schedule:
+      interval: daily
+    exclude-paths:
+      - test
