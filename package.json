@@ -1,0 +1,25 @@
+{
+  "name": "@moneytree/supply-chain-guard",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "files": [
+    "index.js",
+    "lib/"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "bin": {
+    "supply-chain-guard": "index.js"
+  },
+  "scripts": {
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "test": "node --test --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=./test-results.xml './test/**/*.spec.js'",
+    "coverage": "node --experimental-test-coverage --test --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=./test-results.xml './test/**/*.spec.js'"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}
