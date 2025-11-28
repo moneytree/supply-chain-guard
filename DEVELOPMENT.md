@@ -1,6 +1,6 @@
 # Development
 
-If you're a new contributor to this project, please first read [CONTRIBUTING.md](CONTRIBUTING.md).
+If you're a new contributor to this project, please first read [CONTRIBUTING.md](https://github.com/moneytree/supply-chain-guard/blob/main/CONTRIBUTING.md).
 
 ## Running Tests
 

@@ -175,8 +175,8 @@ You can place allow list files in subdirectories to create directory-specific ex
 
 ## Development
 
-Read developer documentation in [DEVELOPMENT.md](DEVELOPMENT.md).
+Read developer documentation in [DEVELOPMENT.md](https://github.com/moneytree/supply-chain-guard/blob/main/DEVELOPMENT.md).
 
 ## Responsible Disclosure
 
-See [SECURITY.md](SECURITY.md) for information on how to responsibly disclose security vulnerabilities.
+See [SECURITY.md](https://github.com/moneytree/supply-chain-guard/blob/main/SECURITY.md) for information on how to responsibly disclose security vulnerabilities.

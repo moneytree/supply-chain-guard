@@ -1,7 +1,10 @@
 {
   "name": "@moneytree/supply-chain-guard",
   "version": "1.0.0",
-  "license": "UNLICENSED",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "index.js",
     "lib/"
