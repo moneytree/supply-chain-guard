@@ -35,5 +35,14 @@ describe('Parser: NPM', () => {
       assert.ok(Array.isArray(packages), 'Expected an array of packages');
       assert.ok(packages.length > 0, 'Expected an array of >0 packages');
     });
+
+    it('returns packages for a v3 package-lock.json using workspaces and linked packages', async () => {
+      const promise = parser.listPackages(new Logger(), createFixturePath('package-lock-v3-links/package-lock.json'));
+
+      assert.ok(promise instanceof Promise, 'Expected a Promise to be returned');
+      const packages = await promise;
+      assert.ok(Array.isArray(packages), 'Expected an array of packages');
+      assert.ok(packages.length > 0, 'Expected an array of >0 packages');
+    });
   });
 });
