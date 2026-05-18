@@ -17,5 +17,15 @@ describe('Parser: Yarn', () => {
       assert.ok(Array.isArray(packages), 'Expected an array of packages');
       assert.ok(packages.length > 0, 'Expected an array of >0 packages');
     });
+
+    it('returns an empty array for Yarn Modern lockfiles', async () => {
+      // Just has the metadata and one dependency since we read the metadata and skip anyway
+      const promise = parser.listPackages(new Logger(), createFixturePath('yarn-lock-modern/yarn.lock'));
+
+      assert.ok(promise instanceof Promise, 'Expected a Promise to be returned');
+      const packages = await promise;
+      assert.ok(Array.isArray(packages), 'Expected an array');
+      assert.ok(packages.length === 0, 'Expected an empty array of packages');
+    });
   });
 });
