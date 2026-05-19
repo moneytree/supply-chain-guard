@@ -17,5 +17,14 @@ describe('Parser: Yarn', () => {
       assert.ok(Array.isArray(packages), 'Expected an array of packages');
       assert.ok(packages.length > 0, 'Expected an array of >0 packages');
     });
+
+    it('returns packages for v9 yarn.lock', async () => {
+      const promise = parser.listPackages(new Logger(), createFixturePath('yarn-lock-v9/yarn.lock'));
+
+      assert.ok(promise instanceof Promise, 'Expected a Promise to be returned');
+      const packages = await promise;
+      assert.ok(Array.isArray(packages), 'Expected an array of packages');
+      assert.ok(packages.length > 0, 'Expected an array of >0 packages');
+    });
   });
 });
