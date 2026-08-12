@@ -2779,20 +2779,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@moneytree/mt-link-javascript-sdk@npm:^4.3.0":
-  version: 4.3.0
-  resolution: "@moneytree/mt-link-javascript-sdk@npm:4.3.0"
-  dependencies:
-    crypto-browserify: "npm:^3.12.0"
-    cspell: "npm:^7.3.7"
-    node-fetch: "npm:^2.6.1"
-    qs: "npm:^6.10.1"
-    snake-case: "npm:^3.0.4"
-    typedoc: "npm:^0.25.1"
-    url-safe-base64: "npm:^1.1.1"
-  checksum: 10c0/7be821e3041eddbddd217aca10f04d498432e2ee415195ca20596944b67de12000f2fc03d3bff576bb12aaf408cc1bbacbe284cb8ecdfe1f3fddee77853458c2
+"@moneytree/mt-link-javascript-sdk@portal:../::locator=mt-link-javascript-sdk-sample%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@moneytree/mt-link-javascript-sdk@portal:../::locator=mt-link-javascript-sdk-sample%40workspace%3A."
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "@noble/hashes@npm:1.4.0":
   version: 1.4.0
