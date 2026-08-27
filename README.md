@@ -32,7 +32,7 @@ And the following registries:
 ### Requirements
 
 - Node.js ≥ 24.0.0
-- Git repository (uses `git ls-files` for discovery)
+- Git CLI (uses `git ls-files` for discovery)
 
 ### Basic Usage
 
