@@ -1,5 +1,8 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import * as parser from '../../../lib/manifestParsers/pip.js';
 import Logger from '../../../lib/Logger.js';
 
@@ -7,6 +10,15 @@ describe('Parser: Pip', () => {
   describe('listPackages()', () => {
     const createFixturePath = (filename) => {
       return `${import.meta.dirname}/fixtures/${filename}`;
+    };
+
+    const createTemporaryUvLock = async (t, fixturePath) => {
+      const directory = await fs.mkdtemp(join(tmpdir(), 'supply-chain-guard-uv-'));
+      t.after(() => fs.rm(directory, { recursive: true, force: true }));
+
+      const manifestPath = join(directory, 'uv.lock');
+      await fs.copyFile(createFixturePath(fixturePath), manifestPath);
+      return manifestPath;
     };
 
     it('returns packages for a v6 Pipfile.lock', async () => {
@@ -41,16 +53,18 @@ describe('Parser: Pip', () => {
       );
     });
 
-    it('rejects unsupported uv.lock schema versions', async () => {
+    it('rejects unsupported uv.lock schema versions', async (t) => {
+      const manifestPath = await createTemporaryUvLock(t, 'uv-lock-v2/lockfile.fixture');
       await assert.rejects(
-        parser.listPackages(new Logger(), createFixturePath('uv-lock-v2/uv.lock')),
+        parser.listPackages(new Logger(), manifestPath),
         /uv\.lock schema version 2 not implemented yet/,
       );
     });
 
-    it('rejects uv.lock packages from unsupported registries', async () => {
+    it('rejects uv.lock packages from unsupported registries', async (t) => {
+      const manifestPath = await createTemporaryUvLock(t, 'uv-lock-custom-registry/lockfile.fixture');
       await assert.rejects(
-        parser.listPackages(new Logger(), createFixturePath('uv-lock-custom-registry/uv.lock')),
+        parser.listPackages(new Logger(), manifestPath),
         /Unsupported registry in uv\.lock for private-package/,
       );
     });
