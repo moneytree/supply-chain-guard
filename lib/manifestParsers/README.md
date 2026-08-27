@@ -42,10 +42,6 @@ Various public codebases provide samples that inform us about the format and typ
 
 [uv-lock-v1]: https://github.com/astral-sh/ruff/blob/b52fe1ba252f81ea50581e074b6d7e77dca9dea3/uv.lock
 
-The uv parser supports schema v1 packages sourced from PyPI or GitHub. It skips
-local workspace, editable, directory, path, and virtual sources, and fails
-loudly for other package sources rather than silently omitting them.
-
 | Bundler |                              |
 | ------- | ---------------------------- |
 | v2      | [Gemfile.lock][gemfile-lock] |
