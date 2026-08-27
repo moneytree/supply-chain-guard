@@ -65,7 +65,7 @@ describe('Parser: Pip', () => {
       const manifestPath = await createTemporaryUvLock(t, 'uv-lock-custom-registry/lockfile.fixture');
       await assert.rejects(
         parser.listPackages(new Logger(), manifestPath),
-        /Unsupported registry in uv\.lock for private-package/,
+        /Could not create package from URL: https:\/\/packages\.example\.com\/files\/private_package-1\.2\.3\.tar\.gz/,
       );
     });
   });
