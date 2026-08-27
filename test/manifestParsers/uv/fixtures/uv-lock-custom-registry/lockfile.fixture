@@ -1,0 +1,9 @@
+version = 1
+revision = 3
+requires-python = ">=3.12"
+
+[[package]]
+name = "private-package"
+version = "1.2.3"
+source = { registry = "https://packages.example.com/simple" }
+sdist = { url = "https://packages.example.com/files/private_package-1.2.3.tar.gz", hash = "sha256:example" }
