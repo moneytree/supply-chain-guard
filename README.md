@@ -16,6 +16,7 @@ The tool currently supports the following manifest files:
 - NPM (JavaScript, TypeScript)
 - Pip (Python)
 - SPM (Swift)
+- uv (Python; lockfile schema v1 with PyPI and GitHub sources)
 - Yarn (JavaScript, TypeScript)
 
 And the following registries:
